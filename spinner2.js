@@ -15,9 +15,9 @@ function spinner() {
   let spinner = ['|', '/', '-', '\\', '|', '/', '-', '\\', '|']; // create an array of spinner elements
   let index = 0; // indexed location of the spinner elements
 
-  // Create the setInterval function
+  // Create the setInterval function// need to review .write and intervalID
   const intervalId = setInterval(() => {
-    process.stdout.write(`\r${spinner[index]}   `); // Display the spinner element
+    process.stdout.write(`\r${spinner[index]}   `); // Display the spinner elementcd 
     index++; // Move to the next element in the spinner array
 
     // Check if we have displayed all the spinner elements
