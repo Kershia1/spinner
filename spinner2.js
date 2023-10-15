@@ -36,70 +36,16 @@ spinner();
 
 
 
-// process.stdout.write('hello from spinner1.js... \rheyyy\n'); 
+process.stdout.write('hello from spinner2... \rheyyy\n'); 
 
-// //Game Plan
-// //logic to create a spinner
-// function spinner() {
-//   let spinner = ['|', '/', '-', '\\', '|', '/', '-', '\\', '|']; // create an array of spinner elements
-//   let index = 0; // indexed location of the spinner elements
-//   let delay = 100; // matches the original timeout
-//   for (let i = 0; i < spinner.length; i++) {
-//     setTimeout(() => { //the setTimeout function will be called 9 times
-//       process.stdout.write(`\r${spinner[i]}   `);
-//     }, delay);
-//     delay += 200;
-//   }
-// }
+//creat setInterval function, with the delay as a callback 
+let counter = 0;  // create counter variable starts at 0 outside loop to prefevent infinit loop 
 
-// //creat setInterval function, with the delay as a callback 
-// setInterval(() => {
-//   let counter = 0;  // create counter variable starts at 0
-//   if (counter < 9) { //need to increment 9 times, step portion of the loop
-//     counter++; // increment counter by 1
-//     index++; // increment index by 1
-//     console.log(index); // print index
-//   } else { (counter > 9) //forgot to add a condition to stop the loop
-//     clearInterval(); // stop the interval @ >9
-//   }
-// });
-
-
-//then use clearInterval to stop 
-
-
-// setTimeout(() => {
-//   process.stdout.write('\r|  ');
-// },100);
-
-// setTimeout(() => {
-//   process.stdout.write('\r/  ');
-// },300);
-
-// setTimeout(() => {
-//   process.stdout.write('\r-  ');
-// },500);
-
-// setTimeout(() => { 
-//   process.stdout.write('\r\ ');
-// }, 700);
-
-// setTimeout(() => {
-//   process.stdout.write('\r| ');
-// }, 900);
-
-// setTimeout(() => {
-//   process.stdout.write('\r/ ');
-// }, 1100);
-
-// setTimeout(() => {
-//   process.stdout.write('\r-  ');
-// }, 1300);
-
-// setTimeout(() => {  
-//   process.stdout.write('\r\  ');
-// } , 1500);
-
-// setTimeout(() => {
-//   process.stdout.write('\r|  ');
-// }, 1700);
+const intervalID = setInterval(() => {
+  // let index = 0;
+  if (counter < 9) { //need to increment 9 times, step portion of the loop
+    counter++; // increment counter by 1
+  } else { 
+    clearInterval(intervalID); // stop the interval @ >9
+  }
+}, 1000); //1 sec delay
